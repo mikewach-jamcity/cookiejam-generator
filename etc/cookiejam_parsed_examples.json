@@ -1,0 +1,40 @@
+[
+    {
+       "type": "Button", 
+       "name": "generic_exit",
+       "function": "onExit",
+       "generic": true
+    },
+    {
+        "type": "Button", 
+        "name": "my_custom_exit",
+        "function": "onExit",
+        "filename": "my_custom_exit.png",
+        "extension": "png"
+     },
+    {
+        "type": "Image", 
+        "name": "titleribbon_badge_instance",
+        "instance": true
+    },
+    {
+        "type": "Text",
+        "name": "subtitle"
+     },
+     {
+        "type": "ScaleButton", 
+        "name": "TwinReward_Cont",
+        "function": "onButton"
+     },
+     {
+        "type": "Image",
+        "name": "reward_info_main_bg",
+        "filename": "reward_info_main_bg.png",
+        "extension": "png"
+     },
+     {
+        "type": "Image", 
+        "name": "example_holder",
+        "holder": true
+    }
+ ]

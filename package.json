@@ -1,12 +1,12 @@
 {
-  "name": "generator-assets",
+  "name": "generator-cookiejam",
   "version": "2.7.3",
-  "description": "Asset generation plug-in for Photoshop Generator",
+  "description": "Cookie Jam asset generation plug-in for Photoshop Generator",
   "main": "main.js",
   "generator-core-version": "^3.7.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/adobe-photoshop/generator-assets"
+    "url": "https://github.com/mikewach-jamcity/generator-assets"
   },
   "license": "MIT",
   "readmeFilename": "README.md",

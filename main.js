@@ -27,8 +27,7 @@
     var DocumentManager = require("./lib/documentmanager"),
         StateManager = require("./lib/statemanager"),
         RenderManager = require("./lib/rendermanager"),
-        AssetManager = require("./lib/assetmanager"),
-        Headlights = require("./lib/headlights");
+        AssetManager = require("./lib/assetmanager");
     
     var PLUGIN_ID = require("./package.json").name;
 
@@ -270,13 +269,11 @@
         exports._renderManager = _renderManager;
         exports._stateManager = _stateManager;
         exports._assetManagers = _assetManagers;
-        exports._layerNameParse = require("./lib/parser").parse;
+        exports._layerNameParse = require("./lib/parser_cookiejam").parse;
 
         _stateManager.on("enabled", _startAssetGeneration);
         _stateManager.on("disabled", _pauseAssetGeneration);
         _documentManager.on("openDocumentsChanged", _handleOpenDocumentsChanged);
-
-        Headlights.init(generator, logger, _stateManager, _renderManager);
     }
 
 
