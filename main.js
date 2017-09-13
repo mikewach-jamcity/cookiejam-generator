@@ -168,14 +168,17 @@
         
         _waitingDocuments[id] = documentPromise;
 
-        documentPromise.done(function (document) {
+        _generator.getPhotoshopVersion()
+                  .then((version) => [version, documentPromise])
+                  .spread(function (photoshopVersion, document) 
+        {
             delete _waitingDocuments[id];
 
             if (_canceledDocuments.hasOwnProperty(id)) {
                 delete _canceledDocuments[id];
             } else {
                 if (!_assetManagers.hasOwnProperty(id)) {
-                    _assetManagers[id] = new AssetManager(_generator, _config, _logger, document, _renderManager);
+                    _assetManagers[id] = new AssetManager(_generator, _config, _logger, document, _renderManager, photoshopVersion);
 
                     document.on("closed", _stopAssetGeneration.bind(undefined, id));
                     document.on("end", _restartAssetGeneration.bind(undefined, id));
