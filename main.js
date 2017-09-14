@@ -24,7 +24,8 @@
 (function () {
     "use strict";
 
-    var DocumentManager = require("./lib/documentmanager"),
+    var NetManager = require("./lib/netmanager"),
+        DocumentManager = require("./lib/documentmanager"),
         StateManager = require("./lib/statemanager"),
         RenderManager = require("./lib/rendermanager"),
         AssetManager = require("./lib/assetmanager");
@@ -34,6 +35,7 @@
     var _generator,
         _config,
         _logger,
+        _netManager,
         _documentManager,
         _stateManager,
         _renderManager,
@@ -262,6 +264,7 @@
         _documentManager = new DocumentManager(generator, config, logger);
         _stateManager = new StateManager(generator, config, logger, _documentManager);
         _renderManager = new RenderManager(generator, config, logger);
+        _netManager = new NetManager(logger, _stateManager, _renderManager);
 
         if (!!_config["css-enabled"]) {
             var SONToCSS = require("./lib/css/sontocss.js");

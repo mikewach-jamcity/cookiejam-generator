@@ -1,5 +1,5 @@
 {
-  "name": "generator-assets",
+  "name": "generator-cookiejam",
   "version": "2.7.3",
   "dependencies": {
     "fs-extra": {
