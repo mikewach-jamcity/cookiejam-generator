@@ -264,7 +264,7 @@
         _documentManager = new DocumentManager(generator, config, logger);
         _stateManager = new StateManager(generator, config, logger, _documentManager);
         _renderManager = new RenderManager(generator, config, logger);
-        _netManager = new NetManager(logger, _stateManager, _renderManager);
+        _netManager = new NetManager(logger, _stateManager, _documentManager, _renderManager);
 
         if (!!_config["css-enabled"]) {
             var SONToCSS = require("./lib/css/sontocss.js");
