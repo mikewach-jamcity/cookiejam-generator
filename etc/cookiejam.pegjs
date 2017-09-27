@@ -2,7 +2,7 @@
     function mergeModifier(modifier, result) {
         if (modifier.indexOf("generic_") != -1) {
         	result.generic = true;
-            return;
+            if(global.genericOverride == false) return;
         }
 
         if (modifier.indexOf("_holder") != -1) {
